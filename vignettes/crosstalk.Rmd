@@ -1,0 +1,35 @@
+---
+title: "LineUp.js Crosstalk Example"
+author: "Samuel Gratzl"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{LineUp.js Crosstalk Example}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cross Talk
+
+The LineUp HTMLWidget supports [Crosstalk](https://rstudio.github.io/crosstalk/) to sync selection and filtering among widgets.
+
+
+```{r crosstalk_iris}
+library(crosstalk)
+library(lineupjs)
+
+sharedIris <- SharedData$new(iris)
+```
+
+```{r crosstalk_iris_lineup1}
+lineup(sharedIris, width = "100%")
+```
+
+```{r crosstalk_iris_lineup2}
+lineup(sharedIris, width = "100%")
+```
